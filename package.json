@@ -1,0 +1,16 @@
+{
+  "name": "restaurant_automation_api",
+  "version": "1.0.0",
+  "description": "api for restaurant automation system",
+  "main": "index.js",
+  "author": "aswin aryal",
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.13",
+    "express": "^4.17.2"
+  }
+}
