@@ -1,0 +1,13 @@
+version: '3'
+services:
+  backend:
+    build: .
+    ports: 
+        - 8000:8000
+        - 9229:9229
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: yarn nodemon --inspect=0.0.0.0:9229 --signal SIGINT --nolazy src/index.ts
+    environment:
+      - PORT=8000
