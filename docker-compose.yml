@@ -1,13 +1,17 @@
-version: '3'
+version: "3.7"
 services:
   backend:
-    build: .
-    ports: 
-        - 8000:8000
-        - 9229:9229
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    ports:
+      - 8000:8000
+      - 9229:9229
     volumes:
-      - .:/usr/src/app
+      - ./src:/usr/src/app/src
       - /usr/src/app/node_modules
-    command: yarn nodemon --inspect=0.0.0.0:9229 --signal SIGINT --nolazy src/index.ts
+      - ./nodemon.json:/usr/app/nodemon.json
+    command: yarn run:docker:dev
     environment:
       - PORT=8000

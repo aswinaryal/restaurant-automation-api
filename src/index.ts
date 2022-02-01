@@ -1,10 +1,15 @@
 import express from "express";
+import morgan from "morgan";
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("hello node");
-});
-const port = process.env.PORT || 3000;
+app.use(morgan("dev"));
 
-app.listen(port);
+app.get("/", (req, res) => {
+  res.json({ status: "hello world from node api" });
+});
+const port = Number(process.env.PORT ?? 3000);
+
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server started at port ${port}`);
+});

@@ -1,2 +1,11 @@
-dist
 node_modules
+Dockerfile
+.dockerignore
+.git
+.gitignore
+.vscode
+docker-compose*
+dist
+.eslintrc.json
+.prettierrc
+.env*
