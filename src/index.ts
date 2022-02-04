@@ -5,7 +5,7 @@ const app = express();
 
 app.use(morgan("dev"));
 
-app.get("/healthcheck", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.json({ status: "Ok" });
 });
 const port = Number(process.env.PORT ?? 3000);
